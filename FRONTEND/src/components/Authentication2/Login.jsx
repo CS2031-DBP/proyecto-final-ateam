@@ -158,7 +158,7 @@ const TextFieldStandard = styled(TextField, {
   textDecoration: `none`,
   lineHeight: `12px`,
   textTransform: `none`,
-  //fontFamily: 'Arial, sans-serif',
+  fontFamily: 'Arial, sans-serif', 
 }));
 
 const TextFieldStandard1 = styled(TextField, {
@@ -174,7 +174,7 @@ const TextFieldStandard1 = styled(TextField, {
   textDecoration: `none`,
   lineHeight: `12px`,
   textTransform: `none`,
-  //fontFamily: 'Arial, sans-serif',
+  fontFamily: 'Arial, sans-serif', 
 }));
 
 const Btm = styled('div')({
@@ -204,7 +204,7 @@ const ButtonContained = styled(Button, {
   textDecoration: `none`,
   lineHeight: `26px`,
   textTransform: `uppercase`,
-  //fontFamily: 'Arial, sans-serif',
+  fontFamily: 'Arial, sans-serif',
 }));
 
 const Pic = styled('div')({
@@ -234,7 +234,6 @@ function Login(props) {
   const [showSuccess, setShowSuccess] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const { setUserId, setJwtToken } = useContext(UserContext);
-  
 
   const navigate = useNavigate();
 
@@ -252,24 +251,26 @@ function Login(props) {
         },
         body: JSON.stringify(credentials),
       });
-  
+
       if (response.ok) {
         const data = await response.json();
         const authToken = data.token;
-  
+
         // Aquí necesitas extraer el 'id' del usuario de la respuesta y almacenarlo.
         // Suponiendo que la API lo devuelve directamente, si no es así, necesitas ajustar esta línea.
         const userId = data.id;
-  
+
         localStorage.setItem('jwtToken', authToken);
         localStorage.setItem('userId', userId);
-  
+
         setJwtToken(authToken);
         setUserId(userId);
-  
+
         navigate('/');
       } else {
-        console.error('Inicio de sesión fallido');
+        // Inicio de sesión fallido
+        setShowError(true);
+        setErrorMessage('Contraseña o email incorrectos');
       }
     } catch (error) {
       console.error('Error al procesar la solicitud de inicio de sesión:', error);
