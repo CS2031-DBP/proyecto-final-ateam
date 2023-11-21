@@ -158,7 +158,7 @@ const TextFieldStandard = styled(TextField, {
   textDecoration: `none`,
   lineHeight: `12px`,
   textTransform: `none`,
-  fontFamily: 'Arial, sans-serif', 
+  //fontFamily: 'Arial, sans-serif',
 }));
 
 const TextFieldStandard1 = styled(TextField, {
@@ -174,7 +174,7 @@ const TextFieldStandard1 = styled(TextField, {
   textDecoration: `none`,
   lineHeight: `12px`,
   textTransform: `none`,
-  fontFamily: 'Arial, sans-serif', 
+  //fontFamily: 'Arial, sans-serif',
 }));
 
 const Btm = styled('div')({
@@ -204,7 +204,7 @@ const ButtonContained = styled(Button, {
   textDecoration: `none`,
   lineHeight: `26px`,
   textTransform: `uppercase`,
-  fontFamily: 'Arial, sans-serif',
+  //fontFamily: 'Arial, sans-serif',
 }));
 
 const Pic = styled('div')({
